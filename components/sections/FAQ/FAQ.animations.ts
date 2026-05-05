@@ -1,4 +1,6 @@
-export const accordionVariants = {
+import { Variants } from "framer-motion";
+
+export const accordionVariants: Variants = {
   hidden: { 
     height: 0, 
     opacity: 0,
