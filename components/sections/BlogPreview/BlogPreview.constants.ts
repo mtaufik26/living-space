@@ -1,0 +1,43 @@
+export const BLOG_PREVIEW_CONTENT = {
+  badge: "Insights",
+  title: "Latest from Our Journal",
+  description: "Exploring the intersection of modern architecture, sustainable living, and innovative interior design.",
+  articles: [
+    {
+      id: "blog-1",
+      title: "The Future of Minimalist Urban Living",
+      category: "Architecture",
+      date: "May 12, 2024",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070&auto=format&fit=crop",
+      slug: "future-minimalist-urban-living",
+    },
+    {
+      id: "blog-2",
+      title: "Integrating Green Spaces in Corporate Offices",
+      category: "Sustainability",
+      date: "May 05, 2024",
+      readTime: "8 min read",
+      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2070&auto=format&fit=crop",
+      slug: "green-spaces-corporate-offices",
+    },
+    {
+      id: 3,
+      title: "Lighting Techniques for Modern Interiors",
+      category: "Interior",
+      date: "April 28, 2024",
+      readTime: "4 min read",
+      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop",
+      slug: "lighting-techniques-modern-interiors",
+    },
+  ],
+  ctaLabel: "Read All Journal",
+  ctaHref: "/blog",
+  pageContent: {
+    badge: "Our Journal",
+    title: "Insights &",
+    highlight: "Inspirations",
+    description: "A collection of stories, news, and deep dives into the world of contemporary architecture and interior design.",
+    categories: ["All Posts", "Architecture", "Interior", "Trends", "Sustainability"],
+  },
+};
