@@ -40,6 +40,19 @@ export const useAnchorScroll = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
+    // If clicking home link while already on home page, scroll to top
+    if (href === "/" && pathname === "/") {
+      if (window.scrollY > 0 || window.location.hash) {
+        e.preventDefault();
+        window.history.pushState(null, "", window.location.pathname);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+      return;
+    }
+
     if (href.includes("#")) {
       const hash = href.split("#")[1];
       const element = document.getElementById(hash);

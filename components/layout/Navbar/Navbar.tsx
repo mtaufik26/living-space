@@ -149,6 +149,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <Link
             href="/"
+            onClick={(e) => handleAnchorClick(e, "/")}
             className="group flex shrink-0 items-center gap-2 sm:gap-3"
           >
             <div className="flex h-8 w-8 items-center justify-center bg-slate-950 text-xs font-black tracking-tighter text-white transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">

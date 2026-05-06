@@ -44,7 +44,11 @@ export const Footer: React.FC = () => {
         >
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8">
-            <Link href="/" className="flex items-center gap-3">
+            <Link
+              href="/"
+              onClick={(e) => handleAnchorClick(e, "/")}
+              className="flex items-center gap-3"
+            >
               <div className="w-10 h-10 bg-white text-black flex items-center justify-center font-black text-sm tracking-tighter">
                 {FOOTER_CONTENT.brand.logo}
               </div>
