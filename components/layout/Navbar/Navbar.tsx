@@ -163,7 +163,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden items-center gap-8 xl:flex">
             {NAVBAR_LINKS.map((link) => {
-              const isHomePage = pathname === "/";
+              const isHomePage = pathname === "/" || pathname === "/living-space";
 
               const sectionId = link.href.startsWith("/#")
                 ? link.href.substring(2)
@@ -278,7 +278,7 @@ export const Navbar: React.FC = () => {
               {/* Links */}
               <div className="flex-1 space-y-5 overflow-y-auto p-6">
                 {NAVBAR_LINKS.map((link, index) => {
-                  const isHomePage = pathname === "/";
+                  const isHomePage = pathname === "/" || pathname === "/living-space";
 
                   const sectionId = link.href.startsWith("/#")
                     ? link.href.substring(2)
