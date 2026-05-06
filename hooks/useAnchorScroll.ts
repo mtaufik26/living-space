@@ -53,11 +53,11 @@ export const useAnchorScroll = () => {
           block: "start",
         });
 
-        // FIX basePath
+        // FIX FINAL BASEPATH
         window.history.pushState(
           null,
           "",
-          `${pathname}#${id}`
+          `${window.location.pathname}#${id}`
         );
       }
     } else {
