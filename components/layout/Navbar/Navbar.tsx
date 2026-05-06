@@ -112,6 +112,8 @@ export const Navbar: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const isScrolledState = isScrolled || pathname !== "/";
+
   return (
     <>
       <motion.nav
@@ -126,14 +128,14 @@ export const Navbar: React.FC = () => {
         }}
         className={cn(
           "fixed top-[-1px] left-0 right-0 z-[100] border-0 outline-none ring-0 transition-all duration-500",
-          isScrolled ? "py-3 lg:py-4" : "py-4 lg:py-6"
+          isScrolledState ? "py-3 lg:py-4" : "py-4 lg:py-6"
         )}
       >
         {/* Background Layer */}
         <div
           className={cn(
             "absolute inset-0 -z-10 border-0",
-            isScrolled
+            isScrolledState
               ? "bg-white/90 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] xl:backdrop-blur-xl"
               : "bg-transparent shadow-none"
           )}
@@ -166,18 +168,11 @@ export const Navbar: React.FC = () => {
             {NAVBAR_LINKS.map((link) => {
               const isHomePage = pathname === "/";
 
-              const sectionId = link.href.includes("#")
-                ? link.href.split("#")[1]
-                : link.href.startsWith("/") && link.href.length > 1
-                  ? link.href.substring(1)
-                  : null;
-
               const isActive =
                 link.href === "/"
-                  ? pathname === "/" && (activeSection === "hero" || activeSection === "")
-                  : (isHomePage && sectionId && activeSection === sectionId) ||
-                  (pathname === link.href) ||
-                  (!link.href.includes("#") && pathname.startsWith(link.href + "/"));
+                  ? pathname === "/"
+                  : (!isHomePage && pathname === link.href) ||
+                    (!isHomePage && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
               return (
                 <Link
                   key={link.href}
@@ -279,18 +274,11 @@ export const Navbar: React.FC = () => {
                 {NAVBAR_LINKS.map((link, index) => {
                   const isHomePage = pathname === "/";
 
-                  const sectionId = link.href.includes("#")
-                    ? link.href.split("#")[1]
-                    : link.href.startsWith("/") && link.href.length > 1
-                      ? link.href.substring(1)
-                      : null;
-
                   const isActive =
                     link.href === "/"
-                      ? pathname === "/" && (activeSection === "hero" || activeSection === "")
-                      : (isHomePage && sectionId && activeSection === sectionId) ||
-                      (pathname === link.href) ||
-                      (!link.href.includes("#") && pathname.startsWith(link.href + "/"));
+                      ? pathname === "/"
+                      : (!isHomePage && pathname === link.href) ||
+                        (!isHomePage && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
                   return (
                     <motion.div
                       key={link.href}
