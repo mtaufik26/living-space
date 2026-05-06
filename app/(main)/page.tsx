@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 import { Hero } from "@/components/sections/Hero";
 import { Clients } from "@/components/sections/Clients";
 import { AboutPreview } from "@/components/sections/AboutPreview";
@@ -11,6 +15,26 @@ import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
+  useEffect(() => {
+    const target = sessionStorage.getItem("scroll-target");
+
+    if (target) {
+      sessionStorage.removeItem("scroll-target");
+
+      requestAnimationFrame(() => {
+        const element = document.getElementById(target);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          window.history.replaceState(null, "", `${window.location.pathname}#${target}`);
+        }
+      });
+    }
+  }, []);
+
   return (
     <main>
       <Hero />
@@ -24,7 +48,6 @@ export default function Home() {
       <BlogPreview />
       <FAQ />
       <Contact />
-      {/* Section lain akan ditambahkan di sini secara bertahap */}
     </main>
   );
 }

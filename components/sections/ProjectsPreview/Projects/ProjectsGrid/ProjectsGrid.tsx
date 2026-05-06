@@ -58,10 +58,9 @@ export const ProjectsGrid: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="group cursor-pointer"
+                className="group"
               >
-                <Link href={`/projects/${project.id}`}>
-                  <div className="space-y-8">
+                <div className="space-y-8">
                     {/* Image Container */}
                     <div className="relative aspect-[4/3] w-full rounded-[40px] overflow-hidden bg-slate-100 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <Image
@@ -70,11 +69,7 @@ export const ProjectsGrid: React.FC = () => {
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-slate-950 scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
-                          <ArrowUpRight className="w-8 h-8" />
-                        </div>
-                      </div>
+
                     </div>
 
                     {/* Content Info */}
@@ -115,7 +110,6 @@ export const ProjectsGrid: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

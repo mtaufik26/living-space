@@ -60,49 +60,45 @@ export const ProjectsPreview: React.FC = () => {
           {/* Large Project - Spans 7 columns */}
           <motion.div
             variants={projectVariants}
-            className="lg:col-span-7 group cursor-pointer"
+            className="lg:col-span-7 group"
           >
-            <Link href={`/projects/${PROJECTS_PREVIEW_CONTENT.projects[0].id}`}>
+            <motion.div 
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              className="relative aspect-[16/10] lg:aspect-auto lg:h-[600px] rounded-[40px] overflow-hidden shadow-2xl"
+            >
+              <motion.div variants={imageScaleVariants} className="h-full w-full">
+                <Image
+                  src={PROJECTS_PREVIEW_CONTENT.projects[0].image}
+                  alt={PROJECTS_PREVIEW_CONTENT.projects[0].title}
+                  fill
+                  className="object-cover transition-all duration-700"
+                />
+              </motion.div>
+              
+              {/* Overlay */}
               <motion.div 
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                className="relative aspect-[16/10] lg:aspect-auto lg:h-[600px] rounded-[40px] overflow-hidden shadow-2xl"
+                variants={overlayVariants}
+                className="absolute inset-0 bg-black/40 backdrop-blur-[2px] p-10 flex flex-col justify-end"
               >
-                <motion.div variants={imageScaleVariants} className="h-full w-full">
-                  <Image
-                    src={PROJECTS_PREVIEW_CONTENT.projects[0].image}
-                    alt={PROJECTS_PREVIEW_CONTENT.projects[0].title}
-                    fill
-                    className="object-cover transition-all duration-700"
-                  />
-                </motion.div>
-                
-                {/* Overlay */}
-                <motion.div 
-                  variants={overlayVariants}
-                  className="absolute inset-0 bg-black/40 backdrop-blur-[2px] p-10 flex flex-col justify-end"
-                >
-                  <div className="flex items-end justify-between gap-4">
-                    <div className="space-y-4">
-                      <span className="text-xs font-black uppercase tracking-[0.2em] text-white/70">
-                        {PROJECTS_PREVIEW_CONTENT.projects[0].category}
-                      </span>
-                      <h3 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
-                        {PROJECTS_PREVIEW_CONTENT.projects[0].title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-white/60">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm font-medium">{PROJECTS_PREVIEW_CONTENT.projects[0].location}</span>
-                      </div>
-                    </div>
-                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-slate-950 shadow-xl group-hover:scale-110 transition-transform duration-500">
-                      <ArrowUpRight className="w-8 h-8" />
+                <div className="flex items-end justify-between gap-4">
+                  <div className="space-y-4">
+                    <span className="text-xs font-black uppercase tracking-[0.2em] text-white/70">
+                      {PROJECTS_PREVIEW_CONTENT.projects[0].category}
+                    </span>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                      {PROJECTS_PREVIEW_CONTENT.projects[0].title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-white/60">
+                      <MapPin className="w-4 h-4" />
+                      <span className="text-sm font-medium">{PROJECTS_PREVIEW_CONTENT.projects[0].location}</span>
                     </div>
                   </div>
-                </motion.div>
+
+                </div>
               </motion.div>
-            </Link>
+            </motion.div>
           </motion.div>
 
           {/* Smaller Projects Column - Spans 5 columns */}
@@ -111,46 +107,42 @@ export const ProjectsPreview: React.FC = () => {
               <motion.div
                 key={project.id}
                 variants={projectVariants}
-                className="group cursor-pointer flex-grow"
+                className="group flex-grow"
               >
-                <Link href={`/projects/${project.id}`}>
+                <motion.div 
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  className="relative aspect-[16/10] lg:h-full rounded-[40px] overflow-hidden shadow-xl"
+                >
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[40px] bg-slate-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  {/* Overlay */}
                   <motion.div 
-                    initial="rest"
-                    whileHover="hover"
-                    animate="rest"
-                    className="relative aspect-[16/10] lg:h-full rounded-[40px] overflow-hidden shadow-xl"
+                    variants={overlayVariants}
+                    className="absolute inset-0 bg-black/40 backdrop-blur-[2px] p-8 flex flex-col justify-end"
                   >
-                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[40px] bg-slate-100">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
-                    
-                    {/* Overlay */}
-                    <motion.div 
-                      variants={overlayVariants}
-                      className="absolute inset-0 bg-black/40 backdrop-blur-[2px] p-8 flex flex-col justify-end"
-                    >
-                      <div className="flex items-end justify-between gap-4">
-                        <div className="space-y-2">
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
-                            {project.category}
-                          </span>
-                          <h3 className="text-xl font-bold text-white tracking-tight">
-                            {project.title}
-                          </h3>
-                        </div>
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-950 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                          <ArrowUpRight className="w-5 h-5" />
-                        </div>
+                    <div className="flex items-end justify-between gap-4">
+                      <div className="space-y-2">
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
+                          {project.category}
+                        </span>
+                        <h3 className="text-xl font-bold text-white tracking-tight">
+                          {project.title}
+                        </h3>
                       </div>
-                    </motion.div>
+
+                    </div>
                   </motion.div>
-                </Link>
+                </motion.div>
               </motion.div>
             ))}
           </div>

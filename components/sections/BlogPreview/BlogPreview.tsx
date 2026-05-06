@@ -58,42 +58,40 @@ export const BlogPreview: React.FC = () => {
             <motion.div
               key={article.id}
               variants={cardVariants}
-              className="group cursor-pointer"
+              className="group"
             >
-              <Link href={`/blog/${article.slug}`}>
-                <div className="space-y-6">
-                  {/* Image Container */}
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] bg-slate-100">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                    <div className="absolute top-6 left-6">
-                      <span className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-slate-950">
-                        {article.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Info */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-                      <span>{article.date}</span>
-                      <span className="w-1 h-1 rounded-full bg-slate-200" />
-                      <div className="flex items-center gap-1.5">
-                        <Clock className="w-3 h-3" />
-                        {article.readTime}
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 leading-tight group-hover:text-slate-600 transition-colors">
-                      {article.title}
-                    </h3>
+              <div className="space-y-6">
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] bg-slate-100">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                  <div className="absolute top-6 left-6">
+                    <span className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-slate-950">
+                      {article.category}
+                    </span>
                   </div>
                 </div>
-              </Link>
+
+                {/* Info */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                    <span>{article.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-slate-200" />
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-3 h-3" />
+                      {article.readTime}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 leading-tight group-hover:text-slate-600 transition-colors">
+                    {article.title}
+                  </h3>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

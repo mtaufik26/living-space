@@ -36,19 +36,6 @@ export const Hero: React.FC = () => {
             animate="visible"
             className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div variants={badgeVariants} className="flex justify-center lg:justify-start">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/5 backdrop-blur-sm border border-slate-200">
-                <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-full w-full bg-emerald-500" />
-                </span>
-                <span className="text-[10px] sm:text-xs font-medium text-slate-600 tracking-wide">
-                  {HERO_CONTENT.badge}
-                </span>
-              </div>
-            </motion.div>
-
             {/* Title - Responsive font sizes */}
             <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-slate-900 leading-[1.2] sm:leading-[1.15] lg:leading-[1.1]">

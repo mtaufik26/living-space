@@ -1,5 +1,4 @@
 export const HERO_CONTENT = {
-  badge: "Hunian Premium",
   title: {
     main: "Mengubah Ruang Menjadi",
     highlight: "Karya Seni Abadi",

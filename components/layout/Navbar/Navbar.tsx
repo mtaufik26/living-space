@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("hero");
 
   // Scroll Spy
   useEffect(() => {
@@ -168,19 +168,15 @@ export const Navbar: React.FC = () => {
               const sectionId = link.href.includes("#")
                 ? link.href.split("#")[1]
                 : link.href.startsWith("/") && link.href.length > 1
-                ? link.href.substring(1)
-                : null;
+                  ? link.href.substring(1)
+                  : null;
 
               const isActive =
-                // 1. Home page hero section
-                (isHomePage && link.href === "/" && (activeSection === "hero" || activeSection === "")) ||
-                // 2. Exact pathname match (for multi-page navigation)
-                (pathname === link.href) ||
-                // 3. Section match via scroll spy (on home page)
-                (isHomePage && sectionId && activeSection === sectionId) ||
-                // 4. Parent path match (e.g., /blog/post-1 highlights /blog)
-                (link.href !== "/" && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
-
+                link.href === "/"
+                  ? pathname === "/" && (activeSection === "hero" || activeSection === "")
+                  : (isHomePage && sectionId && activeSection === sectionId) ||
+                  (pathname === link.href) ||
+                  (!link.href.includes("#") && pathname.startsWith(link.href + "/"));
               return (
                 <Link
                   key={link.href}
@@ -218,7 +214,7 @@ export const Navbar: React.FC = () => {
 
           {/* CTA */}
           <div className="hidden items-center gap-4 xl:flex">
-            <Link 
+            <Link
               href={NAVBAR_CONTENT.cta.href}
               onClick={(e) => handleAnchorClick(e, NAVBAR_CONTENT.cta.href)}
             >
@@ -285,19 +281,15 @@ export const Navbar: React.FC = () => {
                   const sectionId = link.href.includes("#")
                     ? link.href.split("#")[1]
                     : link.href.startsWith("/") && link.href.length > 1
-                    ? link.href.substring(1)
-                    : null;
+                      ? link.href.substring(1)
+                      : null;
 
                   const isActive =
-                    // 1. Home page hero section
-                    (isHomePage && link.href === "/" && (activeSection === "hero" || activeSection === "")) ||
-                    // 2. Exact pathname match (for multi-page navigation)
-                    (pathname === link.href) ||
-                    // 3. Section match via scroll spy (on home page)
-                    (isHomePage && sectionId && activeSection === sectionId) ||
-                    // 4. Parent path match (e.g., /blog/post-1 highlights /blog)
-                    (link.href !== "/" && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
-
+                    link.href === "/"
+                      ? pathname === "/" && (activeSection === "hero" || activeSection === "")
+                      : (isHomePage && sectionId && activeSection === sectionId) ||
+                      (pathname === link.href) ||
+                      (!link.href.includes("#") && pathname.startsWith(link.href + "/"));
                   return (
                     <motion.div
                       key={link.href}

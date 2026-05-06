@@ -19,7 +19,7 @@ export const BlogFeatured: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="group relative overflow-hidden rounded-[40px] bg-slate-50 border border-slate-100"
         >
-          <Link href={`/blog/${featured.slug}`} className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
               <Image 
                 src={featured.image} 
@@ -53,12 +53,10 @@ export const BlogFeatured: React.FC = () => {
                     <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{featured.date}</p>
                   </div>
                 </div>
-                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white transition-all duration-500">
-                  <ArrowUpRight className="w-5 h-5" />
-                </div>
+
               </div>
             </div>
-          </Link>
+          </div>
         </motion.div>
       </div>
     </section>

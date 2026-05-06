@@ -30,7 +30,7 @@ export const useAnchorScroll = () => {
 
     // Handle hash on initial load and when pathname changes
     handleHashScroll();
-    
+
     // Listen for hash changes (e.g. back/forward button)
     window.addEventListener("hashchange", handleHashScroll);
     return () => window.removeEventListener("hashchange", handleHashScroll);

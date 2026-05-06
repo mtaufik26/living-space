@@ -27,7 +27,7 @@ export const BlogGrid: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="group flex flex-col"
             >
-              <Link href={`/blog/${article.slug}`} className="space-y-6">
+              <div className="space-y-6">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] bg-slate-100 shadow-sm transition-all duration-500 group-hover:shadow-xl">
                   <Image
                     src={article.image}
@@ -58,7 +58,7 @@ export const BlogGrid: React.FC = () => {
                     {article.excerpt}
                   </p>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
