@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { SERVICES_HERO_CONTENT } from "./ServicesHero.constants";
 import { containerVariants, itemVariants } from "./ServicesHero.animations";
 
@@ -10,8 +9,6 @@ export const ServicesHero: React.FC = () => {
   return (
     <section id="services-top" className="relative pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-white scroll-mt-0">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        
-        <Breadcrumbs currentPage="Services" />
 
         <motion.div
           variants={containerVariants}

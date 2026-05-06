@@ -1,13 +1,13 @@
 export const CAREERS_PREVIEW_CONTENT = {
-  badge: "Careers",
-  title: "Build the Future with Us",
-  description: "We are always looking for visionary architects, designers, and creative thinkers to join our award-winning studio.",
+  badge: "Karir",
+  title: "Bangun Masa Depan Bersama Kami",
+  description: "Kami selalu mencari arsitek visioner, desainer, dan pemikir kreatif untuk bergabung dengan studio pemenang penghargaan kami.",
   stats: [
-    { label: "Design Awards", value: "24" },
-    { label: "Global Projects", value: "150+" },
-    { label: "Team Members", value: "45" },
+    { label: "Penghargaan Desain", value: "24" },
+    { label: "Proyek Global", value: "150+" },
+    { label: "Anggota Tim", value: "45" },
   ],
-  ctaLabel: "View Openings",
+  ctaLabel: "Lihat Lowongan",
   ctaHref: "/careers",
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
 };

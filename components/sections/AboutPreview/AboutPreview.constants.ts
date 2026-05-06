@@ -1,35 +1,35 @@
 export const ABOUT_PREVIEW_CONTENT = {
-  badge: "About Our Studio",
+  badge: "Tentang Studio Kami",
   title: {
-    main: "We Design Spaces That",
-    highlight: "Inspire Life",
+    main: "Kami Merancang Ruang yang",
+    highlight: "Menginspirasi Kehidupan",
   },
   description: 
-    "For over a decade, Living Space has been at the forefront of architectural innovation and interior excellence. We don't just build structures; we curate environments that enhance the human experience through thoughtful design and meticulous craftsmanship.",
+    "Selama lebih dari satu dekade, Living Space telah berada di garis depan inovasi arsitektur dan keunggulan interior. Kami tidak hanya membangun struktur; kami mengkurasi lingkungan yang meningkatkan pengalaman manusia melalui desain yang cermat dan keahlian yang teliti.",
   features: [
     {
-      title: "Visionary Design",
-      description: "Pushing the boundaries of aesthetics while maintaining timeless elegance.",
+      title: "Desain Visioner",
+      description: "Mendorong batas-batas estetika sambil tetap mempertahankan keanggunan abadi.",
       icon: "Sparkles",
     },
     {
-      title: "Sustainable Living",
-      description: "Integrating eco-friendly materials and energy-efficient solutions.",
+      title: "Hunian Berkelanjutan",
+      description: "Mengintegrasikan bahan ramah lingkungan dan solusi hemat energi.",
       icon: "Leaf",
     },
     {
-      title: "Unmatched Quality",
-      description: "Collaborating with master artisans to ensure every detail is perfection.",
+      title: "Kualitas Tak Tertandingi",
+      description: "Berkolaborasi dengan pengrajin ahli untuk memastikan setiap detail sempurna.",
       icon: "ShieldCheck",
     },
   ],
   images: {
     main: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
     sub: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-    alt: "Modern office and living space design",
+    alt: "Desain kantor dan ruang tamu modern",
   },
   cta: {
-    label: "Our Full Story",
+    label: "Kisah Lengkap Kami",
     href: "/about",
   },
 };

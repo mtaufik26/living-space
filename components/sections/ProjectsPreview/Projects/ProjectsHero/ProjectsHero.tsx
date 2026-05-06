@@ -4,14 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PROJECTS_PAGE_CONTENT } from "../Projects.constants";
 import { containerVariants, itemVariants } from "../Projects.animations";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-
 export const ProjectsHero: React.FC = () => {
   return (
     <section className="relative pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-white">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-
-        <Breadcrumbs currentPage="Projects" />
 
         <motion.div
           variants={containerVariants}

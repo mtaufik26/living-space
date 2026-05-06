@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Living Space | Premium Interior Design & Architecture",
-  description: "Exquisite architectural solutions and interior designs that transform your space into a timeless masterpiece.",
+  title: "Living Space | Desain Interior & Arsitektur Premium",
+  description: "Solusi arsitektur dan desain interior indah yang mengubah ruang Anda menjadi mahakarya abadi.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

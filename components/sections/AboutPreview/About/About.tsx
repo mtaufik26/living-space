@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ABOUT_HERO_CONTENT } from "./About.constants";
 import { containerVariants, itemVariants } from "./About.animations";
 
@@ -11,8 +10,6 @@ export const About: React.FC = () => {
   return (
     <section id="about-top" className="relative pt-28 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-white scroll-mt-0">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        
-        <Breadcrumbs currentPage="About Us" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           {/* Left: Title & Description */}

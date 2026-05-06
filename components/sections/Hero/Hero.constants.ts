@@ -1,28 +1,28 @@
 export const HERO_CONTENT = {
-  badge: "Premium Living",
+  badge: "Hunian Premium",
   title: {
-    main: "Transforming Spaces Into",
-    highlight: "Timeless Masterpieces",
+    main: "Mengubah Ruang Menjadi",
+    highlight: "Karya Seni Abadi",
   },
   description: 
-    "Elevate your lifestyle with bespoke architectural solutions that blend aesthetic elegance with functional brilliance.",
+    "Tingkatkan gaya hidup Anda dengan solusi arsitektur khusus yang memadukan keanggunan estetika dengan kecemerlangan fungsional.",
   cta: {
     primary: {
-      label: "Explore Works",
+      label: "Lihat Karya",
       href: "/projects",
     },
     secondary: {
-      label: "Consult Us",
+      label: "Konsultasi",
       href: "/#contact",
     },
   },
   stats: [
-    { label: "Experience", value: "12+" },
-    { label: "Projects", value: "250+" },
-    { label: "Awards", value: "15" },
+    { label: "Pengalaman", value: "12+" },
+    { label: "Proyek", value: "250+" },
+    { label: "Penghargaan", value: "15" },
   ],
   image: {
     url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop",
-    alt: "Luxury Modern Living Room Interior",
+    alt: "Interior Ruang Tamu Modern Mewah",
   },
 };

@@ -20,9 +20,10 @@ export const useAnchorScroll = () => {
           // to avoid "double-scrolling" or stuttering.
           setTimeout(() => {
             element.scrollIntoView({
+              behavior: "smooth",
               block: "start",
             });
-          }, 50);
+          }, 100);
         }
       }
     };
@@ -40,22 +41,16 @@ export const useAnchorScroll = () => {
     href: string
   ) => {
     if (href.includes("#")) {
-      const [path, hash] = href.split("#");
-      
-      const normalizedPath = path === "" || path === "/" ? "/" : path;
+      const hash = href.split("#")[1];
+      const element = document.getElementById(hash);
 
-      if (pathname === normalizedPath) {
+      if (element) {
         e.preventDefault();
-        const element = document.getElementById(hash);
-        if (element) {
-          // Use history.pushState to update URL without jump
-          window.history.pushState(null, "", `#${hash}`);
-          
-          // Then trigger the scroll (CSS will make it smooth)
-          element.scrollIntoView({
-            block: "start",
-          });
-        }
+        window.history.pushState(null, "", `#${hash}`);
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
     }
   };

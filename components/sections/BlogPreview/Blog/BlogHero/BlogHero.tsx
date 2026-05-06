@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { BLOG_PAGE_DATA } from "../Blog.constants";
 
 export const BlogHero: React.FC = () => {
@@ -11,7 +10,6 @@ export const BlogHero: React.FC = () => {
   return (
     <section className="relative pt-28 lg:pt-32 pb-20 bg-white">
       <div className="container mx-auto px-6 lg:px-12">
-        <Breadcrumbs currentPage="Journal" />
 
         <div className="max-w-4xl space-y-8">
           <motion.span 

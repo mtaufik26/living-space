@@ -3,8 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CAREERS_CONTENT } from "../Careers.constants";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-
 export const CareersHero: React.FC = () => {
   return (
     <section className="relative pt-28 lg:pt-32 pb-20 lg:pb-32 bg-white overflow-hidden">
@@ -12,7 +10,6 @@ export const CareersHero: React.FC = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10" />
 
       <div className="container mx-auto px-6 lg:px-12">
-        <Breadcrumbs currentPage="Careers" />
 
         <div className="max-w-4xl space-y-8">
           <motion.span

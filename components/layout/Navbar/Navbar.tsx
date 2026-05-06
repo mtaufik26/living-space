@@ -172,21 +172,21 @@ export const Navbar: React.FC = () => {
                 : null;
 
               const isActive =
-                (isHomePage &&
-                  link.href === "/" &&
-                  (activeSection === "hero" || activeSection === "")) ||
-                (isHomePage &&
-                  sectionId &&
-                  activeSection === sectionId) ||
-                (!isHomePage &&
-                  pathname === link.href.replace("/#", "/")) ||
-                (link.href !== "/" && pathname === link.href);
+                // 1. Home page hero section
+                (isHomePage && link.href === "/" && (activeSection === "hero" || activeSection === "")) ||
+                // 2. Exact pathname match (for multi-page navigation)
+                (pathname === link.href) ||
+                // 3. Section match via scroll spy (on home page)
+                (isHomePage && sectionId && activeSection === sectionId) ||
+                // 4. Parent path match (e.g., /blog/post-1 highlights /blog)
+                (link.href !== "/" && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
 
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
+                  scroll={!link.href.includes("#")}
                   className="group relative py-2"
                 >
                   <span
@@ -289,16 +289,14 @@ export const Navbar: React.FC = () => {
                     : null;
 
                   const isActive =
-                    (isHomePage &&
-                      link.href === "/" &&
-                      (activeSection === "hero" ||
-                        activeSection === "")) ||
-                    (isHomePage &&
-                      sectionId &&
-                      activeSection === sectionId) ||
-                    (!isHomePage &&
-                      pathname === link.href.replace("/#", "/")) ||
-                    (link.href !== "/" && pathname === link.href);
+                    // 1. Home page hero section
+                    (isHomePage && link.href === "/" && (activeSection === "hero" || activeSection === "")) ||
+                    // 2. Exact pathname match (for multi-page navigation)
+                    (pathname === link.href) ||
+                    // 3. Section match via scroll spy (on home page)
+                    (isHomePage && sectionId && activeSection === sectionId) ||
+                    // 4. Parent path match (e.g., /blog/post-1 highlights /blog)
+                    (link.href !== "/" && !link.href.includes("#") && pathname.startsWith(link.href + "/"));
 
                   return (
                     <motion.div
@@ -315,6 +313,7 @@ export const Navbar: React.FC = () => {
                           handleAnchorClick(e, link.href);
                           setIsMobileMenuOpen(false);
                         }}
+                        scroll={!link.href.includes("#")}
                         className={cn(
                           "block text-2xl font-bold tracking-tight transition-colors",
                           isActive

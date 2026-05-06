@@ -2,13 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-
 export const AboutHero: React.FC = () => {
   return (
     <section className="relative pt-28 lg:pt-32 pb-12 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <Breadcrumbs currentPage="About Us" />
 
         <div className="max-w-4xl space-y-8">
           <motion.span 

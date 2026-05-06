@@ -1,8 +1,8 @@
 export const SERVICES_HERO_CONTENT = {
-  badge: "What We Do",
+  badge: "Apa yang Kami Lakukan",
   title: {
-    main: "Exceptional Services for",
-    highlight: "Visionary Clients",
+    main: "Layanan Luar Biasa untuk",
+    highlight: "Klien Visioner",
   },
-  description: "We provide a comprehensive suite of design and management services, ensuring a seamless journey from the first sketch to the final brick.",
+  description: "Kami menyediakan rangkaian lengkap layanan desain dan manajemen, memastikan perjalanan yang mulus dari sketsa pertama hingga bata terakhir.",
 };

@@ -1,23 +1,23 @@
 export const PROJECTS_PREVIEW_CONTENT = {
-  badge: "Portfolio",
+  badge: "Portofolio",
   title: {
-    main: "Our Finest",
-    highlight: "Architectural Works",
+    main: "Karya Arsitektur",
+    highlight: "Terbaik Kami",
   },
-  description: "A curation of our most prestigious projects, where innovation meets timeless elegance in every detail.",
+  description: "Kurasi proyek-proyek paling bergengsi kami, di mana inovasi bertemu dengan keanggunan abadi di setiap detailnya.",
   projects: [
     {
       id: "vanguard-residence",
       title: "The Vanguard Residence",
-      category: "Residential Architecture",
+      category: "Arsitektur Residensial",
       location: "Bali, Indonesia",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
-      size: "large", // for grid layout
+      size: "large",
     },
     {
       id: "skyline-office",
       title: "Skyline Corporate Hub",
-      category: "Commercial Interior",
+      category: "Interior Komersial",
       location: "Jakarta, Indonesia",
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
       size: "small",
@@ -25,14 +25,14 @@ export const PROJECTS_PREVIEW_CONTENT = {
     {
       id: "minimalist-villa",
       title: "Zenith Minimalist Villa",
-      category: "Modern Living",
-      location: "Kyoto, Japan",
+      category: "Hunian Modern",
+      location: "Kyoto, Jepang",
       image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
       size: "small",
     },
   ],
   cta: {
-    label: "Explore All Projects",
+    label: "Lihat Semua Proyek",
     href: "/projects",
   },
 };

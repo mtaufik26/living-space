@@ -1,33 +1,33 @@
 export const FAQ_CONTENT = {
-  badge: "Questions",
-  title: "Frequently Asked",
-  highlight: "Questions",
-  description: "Find answers to common inquiries about our architectural process, timelines, and services.",
+  badge: "Pertanyaan",
+  title: "Pertanyaan yang Sering",
+  highlight: "Diajukan",
+  description: "Temukan jawaban atas pertanyaan umum tentang proses arsitektur, lini masa, dan layanan kami.",
   items: [
     {
       id: "faq-1",
-      question: "How long does a typical architectural project take?",
-      answer: "A typical residential project can take anywhere from 6 to 18 months, depending on complexity, size, and local permitting processes. We provide a detailed timeline during our initial strategy session.",
+      question: "Berapa lama proyek arsitektur biasanya berlangsung?",
+      answer: "Proyek residensial biasanya membutuhkan waktu antara 6 hingga 18 bulan, tergantung pada kompleksitas, ukuran, dan proses perizinan setempat. Kami menyediakan lini masa terperinci selama sesi strategi awal kami.",
     },
     {
       id: "faq-2",
-      question: "Do you handle the construction phase as well?",
-      answer: "While we are primarily an architectural and design firm, we offer project management and site supervision services to ensure the construction stays true to the design vision and quality standards.",
+      question: "Apakah Anda menangani fase konstruksi juga?",
+      answer: "Meskipun kami terutama adalah firma arsitektur dan desain, kami menawarkan layanan manajemen proyek dan pengawasan lapangan untuk memastikan konstruksi tetap sesuai dengan visi desain dan standar kualitas.",
     },
     {
       id: "faq-3",
-      question: "How do you determine your architectural fees?",
-      answer: "Our fees are typically based on a percentage of the total construction cost, a fixed fee, or an hourly rate, depending on the scope and requirements of your specific project.",
+      question: "Bagaimana Anda menentukan biaya arsitektur Anda?",
+      answer: "Biaya kami biasanya didasarkan pada persentase dari total biaya konstruksi, biaya tetap, atau tarif per jam, tergantung pada ruang lingkup dan persyaratan proyek spesifik Anda.",
     },
     {
       id: "faq-4",
-      question: "Can you help with interior design and styling?",
-      answer: "Yes, we believe in a holistic design approach. Our team handles everything from structural architecture to bespoke interior design, furniture selection, and final styling.",
+      question: "Dapatkah Anda membantu desain interior dan penataan?",
+      answer: "Ya, kami percaya pada pendekatan desain holistik. Tim kami menangani segala hal mulai dari arsitektur struktural hingga desain interior khusus, pemilihan furnitur, dan penataan akhir.",
     },
     {
       id: "faq-5",
-      question: "Do you work on projects outside the local region?",
-      answer: "Absolutely. We have successfully completed projects across various regions. For international or distant projects, we utilize digital collaboration tools and scheduled site visits.",
+      question: "Apakah Anda mengerjakan proyek di luar wilayah lokal?",
+      answer: "Tentu saja. Kami telah berhasil menyelesaikan proyek di berbagai wilayah. Untuk proyek internasional atau jarak jauh, kami menggunakan alat kolaborasi digital dan kunjungan lapangan terjadwal.",
     },
   ],
 };

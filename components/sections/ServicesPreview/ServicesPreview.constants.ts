@@ -1,38 +1,38 @@
 export const SERVICES_PREVIEW_CONTENT = {
-  badge: "Our Expertise",
+  badge: "Keahlian Kami",
   title: {
-    main: "Tailored Solutions for",
-    highlight: "Exceptional Living",
+    main: "Solusi Terpadu untuk",
+    highlight: "Kehidupan Luar Biasa",
   },
-  description: "We combine architectural precision with artistic flair to deliver spaces that are as functional as they are beautiful.",
+  description: "Kami memadukan presisi arsitektural dengan sentuhan artistik untuk menghadirkan ruang yang fungsional sekaligus indah.",
   services: [
     {
-      title: "Architectural Design",
-      description: "Crafting modern, sustainable structures that define the skyline and endure for generations.",
+      title: "Desain Arsitektur",
+      description: "Menciptakan struktur modern dan berkelanjutan yang mendefinisikan cakrawala dan bertahan selama beberapa generasi.",
       icon: "Home",
       href: "/services#architecture",
     },
     {
-      title: "Interior Styling",
-      description: "Curating bespoke interiors that reflect your personality through textures, light, and form.",
+      title: "Penataan Interior",
+      description: "Mengkurasi interior khusus yang mencerminkan kepribadian Anda melalui tekstur, cahaya, dan bentuk.",
       icon: "Layout",
       href: "/services#interior",
     },
     {
-      title: "Landscape Architecture",
-      description: "Seamlessly blending nature with architecture to create serene and inspiring outdoor environments.",
+      title: "Arsitektur Lansekap",
+      description: "Memadukan alam dengan arsitektur secara mulus untuk menciptakan lingkungan luar ruangan yang tenang dan menginspirasi.",
       icon: "TreePine",
       href: "/services#landscape",
     },
     {
-      title: "Project Management",
-      description: "Ensuring every detail is executed to perfection, from initial concept to final walkthrough.",
+      title: "Manajemen Proyek",
+      description: "Memastikan setiap detail dilaksanakan dengan sempurna, dari konsep awal hingga peninjauan akhir.",
       icon: "Briefcase",
       href: "/services#management",
     },
   ],
   cta: {
-    label: "Explore All Services",
+    label: "Lihat Semua Layanan",
     href: "/services",
   },
 };
