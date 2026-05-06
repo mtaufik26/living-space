@@ -7,7 +7,6 @@ export const useAnchorScroll = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Support localhost + production dengan basePath
   const isHomePage =
     pathname === "/" || pathname === "/living-space";
 
@@ -38,7 +37,6 @@ export const useAnchorScroll = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // Hanya handle link anchor
     if (!href.startsWith("/#")) return;
 
     const id = href.replace("/#", "");
@@ -55,10 +53,14 @@ export const useAnchorScroll = () => {
           block: "start",
         });
 
-        window.history.pushState(null, "", `#${id}`);
+        // FIX basePath
+        window.history.pushState(
+          null,
+          "",
+          `${pathname}#${id}`
+        );
       }
     } else {
-      // Dari halaman lain → pindah ke homepage lalu scroll
       e.preventDefault();
 
       router.push(`/#${id}`);
