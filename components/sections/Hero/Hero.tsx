@@ -13,8 +13,10 @@ import {
   imageVariants,
   badgeVariants,
 } from "./Hero.animations";
+import { useAnchorScroll } from "@/hooks/useAnchorScroll";
 
 export const Hero: React.FC = () => {
+  const { handleAnchorClick } = useAnchorScroll();
   const { scrollY } = useScroll();
   const imageY = useTransform(scrollY, [0, 500], [0, 100]);
   const scrollOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -70,7 +72,10 @@ export const Hero: React.FC = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start"
             >
-              <Link href={HERO_CONTENT.cta.primary.href}>
+              <Link 
+                href={HERO_CONTENT.cta.primary.href}
+                onClick={(e) => handleAnchorClick(e, HERO_CONTENT.cta.primary.href)}
+              >
                 <Button
                   size="lg"
                   className="group h-11 sm:h-12 px-6 sm:px-8 bg-slate-900 hover:bg-slate-800 text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-slate-200 w-full sm:w-auto"
@@ -80,7 +85,10 @@ export const Hero: React.FC = () => {
                 </Button>
               </Link>
 
-              <Link href={HERO_CONTENT.cta.secondary.href}>
+              <Link 
+                href={HERO_CONTENT.cta.secondary.href}
+                onClick={(e) => handleAnchorClick(e, HERO_CONTENT.cta.secondary.href)}
+              >
                 <Button
                   variant="ghost"
                   size="lg"

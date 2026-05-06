@@ -6,7 +6,7 @@ import { Globe, Lightbulb, TrendingUp, Monitor } from "lucide-react";
 import { CAREERS_CONTENT } from "../Careers.constants";
 import { containerVariants, itemVariants } from "../Careers.animations";
 
-const IconMap: { [key: string]: any } = {
+const IconMap = {
   Globe,
   Lightbulb,
   TrendingUp,
@@ -31,7 +31,7 @@ export const CareersBenefits: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {CAREERS_CONTENT.benefits.items.map((benefit, index) => {
-            const Icon = IconMap[benefit.icon];
+            const Icon = IconMap[benefit.icon as keyof typeof IconMap];
             return (
               <motion.div 
                 key={index} 

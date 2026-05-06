@@ -14,8 +14,11 @@ import {
 } from "./Navbar.animations";
 import { cn } from "@/lib/utils";
 
+import { useAnchorScroll } from "@/hooks/useAnchorScroll";
+
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
+  const { handleAnchorClick } = useAnchorScroll();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -181,6 +184,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
                   className="group relative py-2"
                 >
                   <span
@@ -212,7 +216,10 @@ export const Navbar: React.FC = () => {
 
           {/* CTA */}
           <div className="hidden items-center gap-4 xl:flex">
-            <Link href={NAVBAR_CONTENT.cta.href}>
+            <Link 
+              href={NAVBAR_CONTENT.cta.href}
+              onClick={(e) => handleAnchorClick(e, NAVBAR_CONTENT.cta.href)}
+            >
               <Button className="group h-12 rounded-none bg-slate-950 px-8 text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all hover:bg-slate-800">
                 {NAVBAR_CONTENT.cta.label}
 
@@ -300,7 +307,10 @@ export const Navbar: React.FC = () => {
                     >
                       <Link
                         href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => {
+                          handleAnchorClick(e, link.href);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={cn(
                           "block text-2xl font-bold tracking-tight transition-colors",
                           isActive
@@ -323,7 +333,10 @@ export const Navbar: React.FC = () => {
 
                 <Link
                   href={NAVBAR_CONTENT.cta.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleAnchorClick(e, NAVBAR_CONTENT.cta.href);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   <Button className="h-12 w-full rounded-none bg-slate-950 text-[9px] font-black uppercase tracking-[0.2em]">
                     {NAVBAR_CONTENT.cta.label}

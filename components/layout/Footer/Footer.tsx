@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 import {
@@ -26,7 +27,11 @@ const SocialIconMap = {
   Pinterest: FaPinterestP,
 };
 
+import { useAnchorScroll } from "@/hooks/useAnchorScroll";
+
 export const Footer: React.FC = () => {
+  const { handleAnchorClick } = useAnchorScroll();
+
   return (
     <footer className="bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 pt-24 pb-12">
@@ -86,7 +91,10 @@ export const Footer: React.FC = () => {
                 <ul className="space-y-4">
                   {group.items.map((item) => (
                     <li key={item.label}>
-                      <Link href={item.href}>
+                      <Link 
+                        href={item.href}
+                        onClick={(e) => handleAnchorClick(e, item.href)}
+                      >
                         <motion.span
                           variants={linkVariants}
                           initial="rest"
@@ -171,6 +179,7 @@ export const Footer: React.FC = () => {
             <div className="pt-8">
               <Link
                 href="/#contact"
+                onClick={(e) => handleAnchorClick(e, "/#contact")}
                 className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white group"
               >
                 Work with us
