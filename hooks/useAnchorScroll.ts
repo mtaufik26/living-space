@@ -16,13 +16,13 @@ export const useAnchorScroll = () => {
         const id = hash.replace("#", "");
         const element = document.getElementById(id);
         if (element) {
-          // Add a small delay to ensure the content is rendered
+          // Let the browser's CSS 'scroll-behavior: smooth' handle the animation
+          // to avoid "double-scrolling" or stuttering.
           setTimeout(() => {
             element.scrollIntoView({
-              behavior: "smooth",
               block: "start",
             });
-          }, 100);
+          }, 50);
         }
       }
     };
@@ -39,28 +39,25 @@ export const useAnchorScroll = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // Only handle links with hashes
-    if (!href.includes("#")) return;
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      
+      const normalizedPath = path === "" || path === "/" ? "/" : path;
 
-    const [path, hash] = href.split("#");
-    
-    // Normalize path for comparison (Next.js pathname is always leading-slash)
-    const normalizedPath = path === "" || path === "/" ? "/" : path;
-
-    // Check if we are already on the target page
-    if (pathname === normalizedPath) {
-      e.preventDefault();
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-        // Update hash without jumping and preserving basePath
-        window.history.pushState(null, "", `#${hash}`);
+      if (pathname === normalizedPath) {
+        e.preventDefault();
+        const element = document.getElementById(hash);
+        if (element) {
+          // Use history.pushState to update URL without jump
+          window.history.pushState(null, "", `#${hash}`);
+          
+          // Then trigger the scroll (CSS will make it smooth)
+          element.scrollIntoView({
+            block: "start",
+          });
+        }
       }
     }
-    // If not on same page, let Next.js <Link> handle it (it prefixes basePath correctly)
   };
 
   return { handleAnchorClick };

@@ -165,8 +165,10 @@ export const Navbar: React.FC = () => {
             {NAVBAR_LINKS.map((link) => {
               const isHomePage = pathname === "/";
 
-              const sectionId = link.href.startsWith("/#")
-                ? link.href.substring(2)
+              const sectionId = link.href.includes("#")
+                ? link.href.split("#")[1]
+                : link.href.startsWith("/") && link.href.length > 1
+                ? link.href.substring(1)
                 : null;
 
               const isActive =
@@ -280,8 +282,10 @@ export const Navbar: React.FC = () => {
                 {NAVBAR_LINKS.map((link, index) => {
                   const isHomePage = pathname === "/";
 
-                  const sectionId = link.href.startsWith("/#")
-                    ? link.href.substring(2)
+                  const sectionId = link.href.includes("#")
+                    ? link.href.split("#")[1]
+                    : link.href.startsWith("/") && link.href.length > 1
+                    ? link.href.substring(1)
                     : null;
 
                   const isActive =
