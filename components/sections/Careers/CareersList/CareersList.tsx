@@ -8,9 +8,9 @@ import { CAREERS_CONTENT } from "../Careers.constants";
 import { containerVariants, itemVariants } from "../Careers.animations";
 
 export const CareersList: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState(CAREERS_CONTENT.openings.categories[0]);
 
-  const filteredJobs = activeCategory === "All" 
+  const filteredJobs = activeCategory === CAREERS_CONTENT.openings.categories[0] 
     ? CAREERS_CONTENT.openings.jobs 
     : CAREERS_CONTENT.openings.jobs.filter(job => job.category === activeCategory);
 

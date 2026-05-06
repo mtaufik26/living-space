@@ -13,10 +13,10 @@ import {
 import { cn } from "@/lib/utils";
 
 export const ProjectsGrid: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState(PROJECTS_PAGE_CONTENT.categories[0]);
 
   const filteredProjects = PROJECTS_PAGE_CONTENT.projects.filter(
-    (project) => activeCategory === "All" || project.category === activeCategory
+    (project) => activeCategory === PROJECTS_PAGE_CONTENT.categories[0] || project.category === activeCategory
   );
 
   return (
